@@ -6,7 +6,7 @@
             <span class="navbar-brand">Users</span>
 
             <div class="d-flex search-notification-wrapper">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control me-2" type="search" placeholder="Search by name, email and phone number" aria-label="Search">
                 
                 <button type="button" class="btn btn-light position-relative notification-wrapper">
                     <i class="fa fa-bell" aria-hidden="true"></i>
@@ -21,6 +21,30 @@
 
 
 <div class="card wrapper">
+    <div class="card-header filter-header">
+    
+        <div class="filter-wrapper">
+            <label>Filter by Role: </label>
+    
+            <div class="btn-group role-btn-wrapper" dropdown #dropdown="bs-dropdown" [autoClose]="true">
+                <button dropdownToggle type="button" class="btn btn-outline-secondary btn-sm btn-square dropdown-toggle">
+                    {{(selectedRoleFilter$ | async) || '----- Select role -----'}} <span class="caret"></span>
+                </button>
+                <ul id="dropdown-triggers-manual" *dropdownMenu class="dropdown-menu" role="menu"
+                    aria-labelledby="button-triggers-manual">
+                    <li role="menuitem select-role cp" *ngIf="(selectedRoleFilter$ | async)" (click)="setRoleFilter(null)">
+                        <a class="dropdown-item">----- Select role -----</a>
+                    </li>
+                    <li role="menuitem cp" *ngFor="let role of roles" (click)="setRoleFilter(role.value)">
+                        <a class="dropdown-item" [ngClass]="{'active': (selectedRoleFilter$ | async) === role.value}">{{role.value}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <button class="btn btn-primary btn-sm ms-2"> Add People </button>
+    </div>
+
     <div class="card-body">
         
         <table class="table table-striped table-hover">
@@ -53,10 +77,10 @@
                         ID: {{user.empId}}
                     </td>
                     <td>{{ user.email }}</td>
-                    <td>{{ user.role }}</td>
+                    <td>{{user.role}}</td>
                     <td>
-                        <button class="btn btn-info btn-sm btn-square me-2" type="button" (click)="viewUser(user.id)" [title]="'View'"><i class="fa fa-eye" aria-hidden="true"></i></button>
-                        <button class="btn btn-danger btn-sm btn-square" type="button" (click)="removeUser(user.id, user.name)" [title]="'Remove'"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                        <button class="btn btn-sm  me-2" type="button" (click)="viewUser(user.id)" [title]="'View'"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                        <button class="btn btn-sm" type="button" (click)="removeUser(user.id, user.name)" [title]="'Remove'"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                     </td>
                 </tr>
             </tbody>

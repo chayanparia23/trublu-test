@@ -46,21 +46,26 @@
     }
 }
 
+.filter-wrapper {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
 
-.tableFixHead {
-    max-height: 60vh;
-    overflow-y: scroll; 
+.role-btn-wrapper {
+    width: 14em;
 
-    table {
-        position: relative;
-        border-collapse: separated;
-        width: 100%;
+    .dropdown-menu {
+        width: 14em;
     }
+}
 
-    thead th { 
-        position: sticky; 
-        top: 0; 
-        z-index: 1; 
-        background: #e7a68f;
-    }
+.select-role {
+    text-align: center !important;
+}
+
+.filter-header {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
 }
