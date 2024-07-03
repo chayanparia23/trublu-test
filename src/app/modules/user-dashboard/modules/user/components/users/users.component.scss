@@ -1,0 +1,66 @@
+:host {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    height: 95vh;
+}
+
+.navbar-card .card-body{
+    padding: 0;
+}
+
+.navbar-brand {
+    font-weight: 600;
+}
+
+.search-notification-wrapper {
+    display: flex;
+    width: 22em;
+}
+
+.navbar-wrapper {
+    padding: 0.5em 0.7em;
+    border-radius: 1em;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.notification-wrapper {
+    position: relative;
+    padding: 0.2em 0.5em;
+
+    .count-wrapper {
+        padding: 0.2em 0.4em;
+    }
+}
+
+.wrapper {
+    height: 87vh;
+
+    .card-body {
+        max-height: 87vh;
+        overflow-y: auto;
+    }
+}
+
+
+.tableFixHead {
+    max-height: 60vh;
+    overflow-y: scroll; 
+
+    table {
+        position: relative;
+        border-collapse: separated;
+        width: 100%;
+    }
+
+    thead th { 
+        position: sticky; 
+        top: 0; 
+        z-index: 1; 
+        background: #e7a68f;
+    }
+}

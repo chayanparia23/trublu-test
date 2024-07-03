@@ -1,0 +1,37 @@
+.wrapper {
+    width: 12em;
+    display: flex;
+    flex-direction: column;
+    height: 95vh;
+    justify-content: center;
+    background-color: #bfd1f3;
+
+    .card-header {
+        border: none;
+        padding-bottom: 2.5em;
+    }
+}
+
+.nav-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
+        padding: 0.6em; 
+        color: white; 
+        border: none; 
+        border-radius: 5px; 
+        cursor: pointer;
+    }
+
+    li:hover {
+        background-color: #89b5e6; /* Darker shade of the button color */
+    }
+
+    li.active {
+        background-color: #0056b3; /* Darker shade of the button color */
+    }
+}

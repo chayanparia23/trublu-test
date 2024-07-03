@@ -1,0 +1,108 @@
+<div class="container-fluid"> 
+    <div class="row details-wrapper">
+        <div class="col-4">
+            <div class="card h-100 no-border"> 
+                <img src="{{(selectedUser$ | async)?.photoUrl || '../../../../../../../../../assets/img/user.png'}}"  
+                    class="card-img-top img-thumbnail">
+                <div class="card-body">
+                    <div class="mb-2">
+                        <label class="label-wrapper">Work Links</label>
+                        <ul class="no-bullets">
+                            <li class="list-el" *ngFor="let item of (selectedUser$ | async)?.workLinks">{{item}}</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <label class="label-wrapper">Skills</label>
+                        <ul class="no-bullets">
+                            <li class="list-el" *ngFor="let item of (selectedUser$ | async)?.skills">{{item}}</li>
+                        </ul>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    
+        <div class="col-8">
+            <div class="card h-100 no-border"> 
+                <div class="card-header header-wrapper">
+                    <div class="header-details">
+                        <div class="mb-4">
+                            <div class="name">{{(selectedUser$ | async)?.name}}</div>
+                            <div class="profession">{{(selectedUser$ | async)?.profession}}</div>
+                        </div>
+                        <p>
+                            Rankings <strong>{{(selectedUser$ | async)?.ranking}}/10</strong>
+                        </p>
+                    </div>
+
+                    <div class="actions">
+                        <button class="btn btn-sm btn-square btn-primary ms-2" (click)="backToUsers()"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back to Users</button>
+                        <button class="btn btn-sm btn-square btn-info ms-2" (click)="openEditUserModal()"><i class="fa fa-pencil" aria-hidden="true"></i> Edit Profile</button>
+                        <button class="btn btn-sm btn-square btn-secondary ms-2" (click)="openResetPasswordModal()"><i class="fa fa-unlock" aria-hidden="true"></i> Forgot Password</button>
+                        <button class="btn btn-sm btn-square btn-warning ms-2" (click)="openChangePasswordModal()">Change Password</button>
+                    </div>
+                    
+                </div>
+                <div class="card-body">
+                    <tabset>
+                        <tab heading="About">
+                            <div class="label-details">
+                                <span class="label">User Id</span>
+                                <span class="details">{{(selectedUser$ | async)?.userId}}</span>
+                            </div>
+
+                            <div class="label-details">
+                                <span class="label">Name</span>
+                                <span class="details">{{(selectedUser$ | async)?.name}}</span>
+                            </div>
+
+                            <div class="label-details">
+                                <span class="label">Gender</span>
+                                <span class="details">{{(selectedUser$ | async)?.gender}}</span>
+                            </div>
+
+                            <div class="label-details">
+                                <span class="label">Age</span>
+                                <span class="details">{{(selectedUser$ | async)?.age}}</span>
+                            </div>
+
+                            <div class="label-details">
+                                <span class="label">Email</span>
+                                <span class="details">{{(selectedUser$ | async)?.email}}</span>
+                            </div>
+
+                            <div class="label-details">
+                                <span class="label">Employee Id</span>
+                                <span class="details">ID: {{(selectedUser$ | async)?.empId}}</span>
+                            </div>
+
+                            <div class="label-details">
+                                <span class="label">Phone</span>
+                                <span class="details">{{(selectedUser$ | async)?.phone}}</span>
+                            </div>
+
+                            <div class="label-details">
+                                <span class="label">Profession</span>
+                                <span class="details">{{(selectedUser$ | async)?.profession}}</span>
+                            </div>
+
+                            <div class="label-details">
+                                <span class="label">Address</span>
+                                <span class="details">{{(selectedUser$ | async)?.address}}</span>
+                            </div>
+
+                            <div class="label-details">
+                                <span class="label">Role</span>
+                                <span class="details">{{(selectedUser$ | async)?.role}}</span>
+                            </div>
+                        </tab>
+    
+                        <tab heading="Timeline">
+                        </tab>
+                    </tabset>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

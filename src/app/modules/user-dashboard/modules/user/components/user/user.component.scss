@@ -1,0 +1,69 @@
+
+:host{
+    width: 100%;
+}
+
+.img-thumbnail {
+    margin: 1em;
+    width: 94%;
+    height: 50vh;
+}
+
+.no-bullets {
+    list-style-type: none;
+    padding: 0.5em;
+}
+
+.no-bullets li {
+    padding-left: 0;
+}
+
+.list-el {
+    font-weight: 600;
+    font-size: medium;
+}
+
+.label-wrapper {
+    text-transform: uppercase;
+}
+
+.no-border {
+    border: none;
+}
+
+.details-wrapper {
+    height: 95vh;
+}
+
+.name {
+    font-weight: 600;
+    font-size: xx-large;
+}
+
+.profession {
+    font-weight: 600;
+    color: #3b79ba;
+}
+
+.header-wrapper {
+    display: flex;
+    border: none;
+    background-color: white;
+    justify-content: space-between;
+}
+
+
+.label-details {
+    display: flex;
+    padding: 1em 1em;
+    font-weight: 600;
+
+    .label {
+        width: 22em;
+    }
+
+    .details {
+        color: #3b79ba;
+    }
+    
+}

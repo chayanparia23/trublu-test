@@ -1,0 +1,66 @@
+<div class="modal-header">
+    <h4 class="modal-title pull-left"> Edit Profile</h4>
+    <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="editProfileModalRef.hide()">
+        <span aria-hidden="true" class="visually-hidden">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="editProfileForm" [class.was-validated]="showValidationErrors$ | async">
+        <div app-form-row
+            id="name"
+            class="form-required form-group mb-4"
+            [label]="'Name'"
+            [errors]="nameValidationMessages$ | async">
+                <input
+                    type="text"
+                    class="form-control"
+                    required
+                    id="name"
+                    formControlName="name"
+                />
+        </div>
+        <div app-form-row
+            id="name"
+            class="form-required form-group mb-4"
+            [label]="'Email'"
+            [errors]="emailValidationMessages$ | async">
+                <input
+                    type="email"
+                    class="form-control"
+                    required
+                    id="email"
+                    formControlName="email"
+                />
+        </div>
+        <div app-form-row
+            id="name"
+            class="form-required form-group mb-4"
+            [label]="'Phone'"
+            [errors]="phoneValidationMessages$ | async">
+                <input
+                    type="number"
+                    class="form-control"
+                    required
+                    id="phone"
+                    formControlName="phone"
+                />
+        </div>
+        <div app-form-row
+            id="name"
+            class="form-required form-group"
+            [label]="'Age'"
+            [errors]="ageValidationMessages$ | async">
+                <input
+                    type="number"
+                    class="form-control"
+                    required
+                    id="age"
+                    formControlName="age"
+                />
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button form="rolesFormId" type="submit" class="btn btn-success" (click)="saveChanges()">Submit</button>
+    <button type="button" class="btn btn-danger" (click)="editProfileModalRef.hide()">Cancel</button>
+</div>

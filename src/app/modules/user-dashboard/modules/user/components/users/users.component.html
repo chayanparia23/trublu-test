@@ -1,0 +1,68 @@
+
+
+<div class="card navbar-card">
+    <div class="card-body">
+        <nav class="navbar navbar-expand-lg navbar-light navbar-wrapper">
+            <span class="navbar-brand">Users</span>
+
+            <div class="d-flex search-notification-wrapper">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                
+                <button type="button" class="btn btn-light position-relative notification-wrapper">
+                    <i class="fa fa-bell" aria-hidden="true"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger count-wrapper">
+                      2
+                    </span>
+                </button>
+            </div>
+        </nav>
+    </div>
+</div>
+
+
+<div class="card wrapper">
+    <div class="card-body">
+        
+        <table class="table table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">
+                        <input type="checkbox" />
+                    </th>
+                    <th scope="col">
+                        Name
+                    </th>
+                    <th scope="col">Employee ID</th>
+                    <th scope="col">Email ID</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users$ | async; index as i">
+                    <td><input type="checkbox" /></td>
+                    <th scope="row">
+                        <img
+                            src="{{user.photoUrl || '../../../../../../../../../assets/img/user.png'}}"
+                            class="me-2"
+                            style="width: 20px"
+                            />
+                        {{ user.name }}
+                    </th>
+                    <td>
+                        ID: {{user.empId}}
+                    </td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.role }}</td>
+                    <td>
+                        <button class="btn btn-info btn-sm btn-square me-2" type="button" (click)="viewUser(user.id)" [title]="'View'"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                        <button class="btn btn-danger btn-sm btn-square" type="button" (click)="removeUser(user.id, user.name)" [title]="'Remove'"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+            
+            
+        </table>
+
+    </div>
+</div>

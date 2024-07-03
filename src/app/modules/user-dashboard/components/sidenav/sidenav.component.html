@@ -1,0 +1,16 @@
+<div class="card wrapper">
+    <div class="card-header">
+        <img src="../../../../../assets/img/trublulogo.svg" class="card-img-top" alt="logo">
+    </div>
+    <div class="card-body">
+        <ul class="nav-wrapper">
+            <li *ngFor="let nav of navList" 
+                [routerLink]="[nav.link]"
+                [routerLinkActive]="['active']"
+                [ngClass]="{'active': nav.link === router.url}">
+                <i [class]="nav.icon"></i>
+                {{nav.name}}
+            </li>
+        </ul>
+    </div>
+</div>
